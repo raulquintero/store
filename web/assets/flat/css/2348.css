@@ -1,0 +1,49 @@
+
+.wrapper {
+    width: 100%;
+    min-width: 1000px;
+}
+
+
+/* Header
+-----------------------------------------------------------------------------*/
+.header {
+    height: 50px;
+    background: #FFE680;
+}
+
+
+/* Middle
+-----------------------------------------------------------------------------*/
+.middle {
+    width: 100%;
+    position: relative;
+    min-width: 300px;
+
+
+}
+.middle:after {
+    display: table;
+    clear: both;
+    content: '';
+}
+.container {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    min-width: 300px;
+}
+.content {
+    padding: 0 0px 0 0;
+}
+
+
+/* Right Sidebar
+-----------------------------------------------------------------------------*/
+.right-sidebar {
+    float: left;
+    width: 250px;
+    margin-left: -250px;
+    position: relative;
+    background: #FFACAA;
+}
