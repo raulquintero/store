@@ -25,8 +25,11 @@ security:
                 check_path: /login_check
                 always_use_default_target_path: false
                 default_target_path:  /home
+            logout:
  
-            logout:       true
+                path:           /logout
+                target:         /login
+            # logout:       true
             anonymous:    true
  
     access_control:

@@ -1,0 +1,55 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+<h2>INICIE SESION AQUI</h2>
+		
+    
+    
+        <div class="form-group">
+            <div class="email controls" >
+   
+            
+
+        {% if app.request.hasPreviousSession %}
+                    {% for type, messages in app.session.flashbag.all() %}
+                        {% for message in messages %}
+                            <div class="flash-{{ type }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+   
+
+
+
+    {% if error %}
+        <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>Warning! </strong>
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+        </div>
+    {% endif %}
+
+<form action="{{ path("fos_user_security_check") }}" method="post">
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+
+    <label for="username">{{ 'security.login.username'|trans }}</label>
+    <input type="text" id="username" name="_username" placeholder="E-Mail" class='form-control' value="{{ last_username }}" required="required" />
+
+    <label for="password">{{ 'security.login.password'|trans }}</label>
+    <input type="password" id="password" name="_password" placeholder="Password" class='form-control' required="required" />
+
+    <div class="submit">
+		<div class="remember">
+
+            <input type="checkbox" id="remember" class="icheck-me" data-skin="square" data-color="blue" name="_remember_me" valueded="on" />
+            <label for="remember_me">{{ 'security.login.remember_me'|trans }}</lable>
+        </div>
+        <input type="submit" id="_submit" name="_submit" class="btn btn-primary" value="{{ 'security.login.submit'|trans }}" />
+					
+    </div>
+
+</form>

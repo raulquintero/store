@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<!-- Apple devices fullscreen -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<!-- Apple devices fullscreen -->
+	<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<title>Login</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="/assets/flat/css/bootstrap.min.css">
+	<!-- icheck -->
+	<link rel="stylesheet" href="/assets/flat/css/plugins/icheck/all.css">
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="/assets/flat/css/style.css">
+	<!-- Color CSS -->
+	<link rel="stylesheet" href="/assets/flat/css/themes.css">
+
+
+	<!-- jQuery -->
+	<script src="/assets/flat/js/jquery.min.js"></script>
+
+	<!-- Nice Scroll -->
+	<script src="/assets/flat/js/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+	<!-- Validation -->
+	<script src="/assets/flat/js/plugins/validation/jquery.validate.min.js"></script>
+	<script src="/assets/flat/js/plugins/validation/additional-methods.min.js"></script>
+	<!-- icheck -->
+	<script src="/assets/flat/js/plugins/icheck/jquery.icheck.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="/assets/flat/js/bootstrap.min.js"></script>
+	<script src="/assets/flat/js/eakroko.js"></script>
+
+
+	<script src="/assets/js/ajax.js"></script>
+
+
+	<!--[if lte IE 9]>
+		<script src="/js/assets/flat/plugins/placeholder/jquery.placeholder.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('input, textarea').placeholder();
+			});
+		</script>
+	<![endif]-->
+
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/assets/flat/img/favicon.ico" />
+	<!-- Apple devices Homescreen icon -->
+	<link rel="apple-touch-icon-precomposed" href="/assets/flat/img/apple-touch-icon-precomposed.png" />
+
+	<script type=text/javascript>
+		function setFocusTo(){
+			 $("#user_name").focus();
+			//document.getElementById("user_name").focus();
+		}
+	</script>
+	
+
+
+<style type="text/css">
+
+body {
+	background-image: url("/assets/flat/img/softdev.jpg");
+}
+</style>
+</head>
+
+<body class='login' onload="setFocusTo();">
+
+
+<div class="wrapper">
+		<h1>
+			<a href="index.html">
+				<img src="/logo.png" alt="" class='retina-ready' width="59" height="49">Cibercomm</a>
+		</h1>
+		<div class="login-body" id="loginzone" style="padding-left: 20px;padding-right:20px;">
+			
+
+        <div>
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+
+
+
+   
+            </div>
+        </div>
+       
+       
+			<div class="forget">
+				 <a href="/register">
+					<span>Baja California, Mexico</span>
+				</a> 
+                    <br>
+					<!--
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                        <a href="{{ path('fos_user_security_logout') }}">
+                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    {% else %}
+                        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                    {% endif %}
+					-->
+			</div>
+		</div>
+	</div>
+	
+
+
+</body>
+
+</html>
+
